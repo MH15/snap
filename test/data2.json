@@ -1,18 +1,20 @@
 {
-    "title": "BRIT",
-    "type": "FAT",
-    "properties": {
-        "firstName": {
-            "type": "phhhh"
+    "root": {
+        "title": "BRIT",
+        "type": "FAT",
+        "properties": {
+            "firstName": {
+                "type": "phhhh"
+            },
+            "lastName": {
+                "type": "nope"
+            },
+            "age": {
+                "description": "Age in years",
+                "type": "integer",
+                "minimum": 0
+            }
         },
-        "lastName": {
-            "type": "nope"
-        },
-        "age": {
-            "description": "Age in years",
-            "type": "integer",
-            "minimum": 0
-        }
-    },
-    "required": ["firstName", "lastName"]
+        "required": ["firstName", "lastName"]
+    }
 }
