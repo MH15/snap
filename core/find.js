@@ -1,6 +1,6 @@
 // Algorithims for finding stuff, etc
 class Find {
-	findObjectByKey(array, key, value) {
+	Object(array, key, value) {
 		for (var i = 0; i < array.length; i++) {
 			if (array[i][key] === value) {
 				return array[i];
@@ -8,10 +8,14 @@ class Find {
 		}
 		return null;
 	}
-	count(object) {
+	Count(object) {
 		let keys = Object.keys(object)
 		// console.log(keys)
 		return keys.length
+	}
+	Keys(object) {
+		let keys = Object.keys(object)
+		return keys
 	}
 } 
 

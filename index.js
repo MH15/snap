@@ -36,21 +36,22 @@ class Snap {
 		// if no parameter is given, the ACTIVE_FILE is logged
 		if (file === undefined) {
 			console.log("File content:")
-			console.log(find.findObjectByKey(this.STORE, "title", this.ACTIVE_FILE).data)
+			console.log(find.Object(this.STORE, "title", this.ACTIVE_FILE).data)
 			console.log("File metadata:")
-			console.log(find.findObjectByKey(this.STORE, "title", this.ACTIVE_FILE).meta)
+			console.log(find.Object(this.STORE, "title", this.ACTIVE_FILE).meta)
 		} else {
 			console.log("File content:")
-			console.log(find.findObjectByKey(this.STORE, "title", filename).data)
+			console.log(find.Object(this.STORE, "title", filename).data)
 			console.log("File metadata:")
-			console.log(find.findObjectByKey(this.STORE, "title", filename).meta)
+			console.log(find.Object(this.STORE, "title", filename).meta)
 		}
 	}
 	setActiveFile(filename) {
-		if (find.findObjectByKey(this.STORE, "title", filename) != null) {
+		if (find.Object(this.STORE, "title", filename) != null) {
 			this.ACTIVE_FILE = filename
 		}
 	}
+
 
 
 }	
@@ -63,6 +64,9 @@ Snap.prototype.CursorDown = Cursor.Down
 Snap.prototype.CursorHome = Cursor.Home
 Snap.prototype.CursorHistoryPrevious = Cursor.HistoryPrevious
 Snap.prototype.CursorHistoryNext = Cursor.HistoryNext
+
+// find things
+Snap.prototype.Find = find
 
 
 module.exports = Snap

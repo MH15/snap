@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/MH15/snap/issues"
   },
-  "homepage": "https://github.com/MH15/snap#readme"
+  "homepage": "https://github.com/MH15/snap#readme",
+  "devDependencies": {
+    "express": "^4.16.3"
+  }
 }

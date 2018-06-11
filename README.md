@@ -42,9 +42,21 @@ TODO: explain how Snap cursors works
 
 `Snap.CursorDown("field")`	moves the cursor down one layer to the indicated field. If such field exists, it is returned. If it does not exist, `-1` is returned.
 
+`Snap.CursorHistoryPrevious()` is equivalent to an undo command. Returns the current `CURSOR` selection if successful; or, in the event that this command has reached the beginning of the History, returns -1. There is no "HistoryNext" or Redo function currently implemented.
+
 
 ### H Cursor
 History of the `CURSOR` element is represented in the `H_CURSOR` array.
 
 - `"home"` indicates that the JSON file was homed using `Snap.CursorHome()`.
-- `"down"`
+- `"down"` indicates that the Cursor moved down a level in the JSON file to a specified key.
+
+### Find
+`Snap.Find.Keys()` returns an array of all keys at the cursor level.
+
+`Snap.Find.Count()` returns an integer equivalent to `Snap.Find.Keys().length`, because who wants to type that out.
+
+`Snap.Find.Object("key")` returns an object with title matching the "key" parameter, if a match exists. This method returns the first matching object. Additional matches are ignored. If no matches are found, `-1` is returned.
+
+
+
