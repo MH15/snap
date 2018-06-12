@@ -26,6 +26,8 @@ let STORE = {
 ```
 A global variable exists named `ACTIVE_FILE` that indicates which loaded file is currently active.
 
+`CURSOR_DEPTH` indicates how many levels deep the `CURSOR` has traveled. Used for adding the `CURSOR` back to `HOME` before saving, etc.
+
 ## Usage
 
 ### Snap
@@ -34,6 +36,10 @@ A global variable exists named `ACTIVE_FILE` that indicates which loaded file is
 `Snap.printFile("filename")` logs the file to the console. The exact filename that the file was loaded with must be used. This command does no reload the file from  the disk, it merely prints the current state. Ommiting the argument will print the active file.
 
 `Snap.setActiveFile("filename")` sets the active file from the files already loaded. If the string passed in does not correspond to a file that has been loaded, `null` will be returned.
+
+`Snap.Edit("path", {update})` queries the active file in form `field.field.field` and replaces it with the update parameter. The update does not have to match the existing data. If the path does not match, `-1` is returned. The path must exist, no new paths will be created by this command. To insert new data, use `Insert`.
+
+`Snap.Query("path")` just like `Edit` except it finds and returns whatever is at the position.
 
 ### Cursor
 TODO: explain how Snap cursors works

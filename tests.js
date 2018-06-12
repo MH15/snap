@@ -11,21 +11,54 @@ Snap.loadFile("test/data2.json")
 Snap.setActiveFile("test/data2.json")
 
 Snap.CursorHome()
-// console.log(Snap.CURSOR)
+// console.log(Snap.HOME)
 
-Snap.CursorDown("root")
-Snap.CursorDown("properties")
-
-// Snap.CursorHistoryPrevious()
-
-// these should return -1 bc we at top of stack
-Snap.CursorHistoryPrevious()
-// console.log(Snap.CURSOR)
+// Snap.CursorDown("root")
+// Snap.CursorDown("properties")
 
 
+console.log(Snap.HOME)
+console.log(Snap.Edit("root.properties", {type: "wad"}))
+console.log(Snap.Query("root.properties.type"))
 
 
-console.log(Snap)
+// console.log(Snap.HOME)
+
+// console.log(Snap.HOME)
+// console.log("\n\n\n")
+// setPath(this.HOME, 'root', 'hetero')
+
+// console.log(Snap.HOME)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // debugging only - works with the Chrome Debugger to visualize objects
 const express = require('express')
@@ -44,7 +77,7 @@ app.get('/:name?', (req, res) => {
   
 })
 
-app.listen(PORT, () => console.log(`App listening on *:${PORT}`))
+// app.listen(PORT, () => console.log(`App listening on *:${PORT}`))
 
 
 

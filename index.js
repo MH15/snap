@@ -1,12 +1,11 @@
 const fs = require('fs')
 const io = require('./core/io')
 const find = require('./core/find')
+const operations = require('./core/operations')
 const path = require('path')
 
 
-let STORE = []
-let ACTIVE_FILE = ""
-let LOCK = false
+
 
 class Snap {
 	constructor(dirname) {
@@ -17,6 +16,7 @@ class Snap {
 		this.CURSOR = ""
 		// H_CURSOR keeps the history of the cursor in an array
 		this.H_CURSOR = []
+		this.CURSOR_DEPTH = []
 		// keeping the paths straight
 		this.dirname = dirname
 		// console.log("Snap.js loaded at %s in directory %s.", new Date().toLocaleString(), dirname)
@@ -64,9 +64,13 @@ Snap.prototype.CursorDown = Cursor.Down
 Snap.prototype.CursorHome = Cursor.Home
 Snap.prototype.CursorHistoryPrevious = Cursor.HistoryPrevious
 Snap.prototype.CursorHistoryNext = Cursor.HistoryNext
+Snap.prototype.CursorPush = Cursor.Push
 
 // find things
 Snap.prototype.Find = find
+// Insert, Edit, Delete etc
+Snap.prototype.Edit = operations.Edit
+Snap.prototype.Query = operations.Query
 
 
 module.exports = Snap
