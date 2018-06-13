@@ -18,9 +18,12 @@ Snap.CursorHome()
 
 
 console.log(Snap.HOME)
-console.log(Snap.Edit("root.properties", {type: "wad"}))
-console.log(Snap.Query("root.properties.type"))
+// console.log(Snap.Edit("root.properties", {type: "wad"}))
+// console.log(Snap.Query("root.properties.firstName"))
 
+Snap.Delete(Snap.HOME, "root.properties.firstName")
+Snap.Delete(Snap.HOME, "root.properties.firstName")
+console.log(Snap.HOME)
 
 // console.log(Snap.HOME)
 

@@ -20,6 +20,7 @@ class Snap {
 		// keeping the paths straight
 		this.dirname = dirname
 		// console.log("Snap.js loaded at %s in directory %s.", new Date().toLocaleString(), dirname)
+		this.MAX_DEPTH = 40
 	}
 
 	loadFile(file) {
@@ -71,6 +72,7 @@ Snap.prototype.Find = find
 // Insert, Edit, Delete etc
 Snap.prototype.Edit = operations.Edit
 Snap.prototype.Query = operations.Query
+Snap.prototype.Delete = operations.Delete
 
 
 module.exports = Snap

@@ -19,7 +19,15 @@ class Find {
 	}
 
 	resolvePath(object, path, defaultValue) {
-		let b = path.split('.').reduce((o, p) => o ? o[p] : defaultValue, object)
+		let a = path.split('.')
+		let b = a.reduce((obj, prop) => {
+			// return obj ? obj[prop] : defaultValue
+			if (obj) {
+				return obj[prop]
+			} else {
+				return null
+			}
+		}, object)
 		return b
 	}
 

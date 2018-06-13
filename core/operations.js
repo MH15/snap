@@ -9,9 +9,29 @@ class Operations {
 			return -1
 		}
 	}
-	Delete() {
+	Delete(object, path, defaultValue) {
+		let a = path.split('.')
+		// let b = a.reduce((o, p) => o ? o[p] : defaultValue, object)
+		let b = a.reduce((obj, prop) => {
+			// return obj ? obj[prop] : defaultValue
+			if (obj) {
+				return obj[prop]
+			} else {
+				return null
+			}
+		}, object)
+		
 
+		let paths = path.split('.')
+		let accessString = "object." + paths.join('.')
+		// console.log(eval(accessString + "='a'"))
+
+		eval("delete " + accessString)
+		this.HOME = object
+		return this.HOME
+		
 	}
+
 	Insert() {
 
 	}
