@@ -16,6 +16,7 @@ class Snap {
 		this.CURSOR = ""
 		// H_CURSOR keeps the history of the cursor in an array
 		this.H_CURSOR = []
+		
 		this.CURSOR_DEPTH = []
 		// keeping the paths straight
 		this.dirname = dirname
