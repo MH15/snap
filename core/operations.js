@@ -10,30 +10,23 @@ class Operations {
 		}
 	}
 	Delete(object, path, defaultValue) {
-		let a = path.split('.')
-		// let b = a.reduce((o, p) => o ? o[p] : defaultValue, object)
-		let b = a.reduce((obj, prop) => {
-			// return obj ? obj[prop] : defaultValue
-			if (obj) {
-				return obj[prop]
-			} else {
-				return null
-			}
-		}, object)
-		
-
 		let paths = path.split('.')
 		let accessString = "object." + paths.join('.')
 		// console.log(eval(accessString + "='a'"))
-
 		eval("delete " + accessString)
 		this.HOME = object
 		return this.HOME
-		
 	}
 
-	Insert() {
-
+	Insert(path, insertion) {
+		if (this.Find.resolvePath(this.HOME, path)) {
+			return -1
+		} else {
+			let paths = path.split('.')
+			let accessString = "this.HOME." + paths.join('.')
+			eval(accessString + "=" + "insertion")
+			return this.HOME
+		}
 	}
 
 	Query(path) {

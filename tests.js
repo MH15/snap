@@ -19,13 +19,14 @@ Snap.CursorHome()
 
 console.log(Snap.HOME)
 // console.log(Snap.Edit("root.properties", {type: "wad"}))
-// console.log(Snap.Query("root.properties.firstName"))
+// console.log(Snap.Query("root.properties.firstNamaae"))
 
 Snap.Delete(Snap.HOME, "root.properties.firstName")
-Snap.Delete(Snap.HOME, "root.properties.firstName")
-console.log(Snap.HOME)
+// Snap.Delete(Snap.HOME, "root.properties.firstName")
+console.log(Snap.HOME.root.properties)
 
-// console.log(Snap.HOME)
+Snap.Insert("root.properties.firstName", {"title": "phhhh"})
+console.log(Snap.HOME.root.properties)
 
 // console.log(Snap.HOME)
 // console.log("\n\n\n")

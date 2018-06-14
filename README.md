@@ -41,6 +41,10 @@ A global variable exists named `ACTIVE_FILE` that indicates which loaded file is
 
 `Snap.Query("path")` just like `Edit` except it finds and returns whatever is at the position.
 
+`Snap.Delete("path")` deletes a field if it exists. Returns the object if successful, `-1` if matching path is not found or if `Delete` fails for other reasons.
+
+`Snap.Insert("path", {insertion})` just like `Edit`, `Query` and `Delete`. If a key already exists at this path, `-1` is returned. If the new keys are inserted successfully, the object is returned.
+
 ### Cursor
 TODO: explain how Snap cursors works
 
