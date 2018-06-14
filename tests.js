@@ -32,7 +32,6 @@ console.log(Snap.HOME.root.properties)
 // console.log("\n\n\n")
 // setPath(this.HOME, 'root', 'hetero')
 
-// console.log(Snap.HOME)
 
 
 
