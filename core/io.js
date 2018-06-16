@@ -7,15 +7,13 @@ const readFile = (path, opts = 'utf8') => {
 }
 
 
-const writeFile = (path, data, opts = 'utf8') =>
-	new Promise((res, rej) => {
-		fs.writeFile(path, data, opts, (err) => {
-			if (err) rej(err)
-			else res()
-		})
-	}).catch(() => {
-		console.log("err")
+const writeFile = (path, data, opts = 'utf8') => {
+	fs.writeFile(path, data, (err) => {
+		if (err) throw err
+		return 1
 	})
+}
+
 
 module.exports = {
 	readFile,

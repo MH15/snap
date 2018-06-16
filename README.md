@@ -33,6 +33,17 @@ A global variable exists named `ACTIVE_FILE` that indicates which loaded file is
 ### Snap
 `Snap.loadFile("path")` loads the file specified and sets the file as the active file. All further Snap commands will be called on this file unless the active file is changed or this file is unloaded. Calling `loadFile` on a file that's already been loaded reloads the file.
 
+`Snap.saveFile({options})` saves the active file to disk. Optionals are listed below.
+
+```javascript
+let options = {
+	padding: 4, // saves JSON with spaces for readability
+	saveas: "bbb.txt" // new save location relative to project path
+
+}
+
+```
+
 `Snap.printFile("filename")` logs the file to the console. The exact filename that the file was loaded with must be used. This command does no reload the file from  the disk, it merely prints the current state. Ommiting the argument will print the active file.
 
 `Snap.setActiveFile("filename")` sets the active file from the files already loaded. If the string passed in does not correspond to a file that has been loaded, `null` will be returned.

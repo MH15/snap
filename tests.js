@@ -1,36 +1,87 @@
 // require main library
 const snap = require('./index')
+const Benchmark = require('benchmark')
+
+let suite = new Benchmark.Suite
+
 
 // feed Snap the current __dirname
 const Snap = new snap(__dirname)
-
-// load file
-// Snap.loadFile("test/data.json")
-Snap.loadFile("test/data2.json")
-
-Snap.setActiveFile("test/data2.json")
-
-Snap.CursorHome()
-// console.log(Snap.HOME)
-
-// Snap.CursorDown("root")
-// Snap.CursorDown("properties")
+// Snap.loadFile("test/data0.json")
+// Snap.loadFile("test/data1.json")
+// Snap.loadFile("test/data2.json")
+const saveOptions = {
+	padding: 4
+}
 
 
-console.log(Snap.HOME)
-// console.log(Snap.Edit("root.properties", {type: "wad"}))
-// console.log(Snap.Query("root.properties.firstNamaae"))
+// // activate before using
+// Snap.setActiveFile("test/data2.json")
+// let a = Snap.Query("name")
 
-Snap.Delete(Snap.HOME, "root.properties.firstName")
-// Snap.Delete(Snap.HOME, "root.properties.firstName")
-console.log(Snap.HOME.root.properties)
+// Snap.setActiveFile("test/data1.json")
+// let b = Snap.Edit("quiz.sport.q1", {"foo":"bar"})
+// Snap.saveFile(saveOptions)
 
-Snap.Insert("root.properties.firstName", {"title": "phhhh"})
-console.log(Snap.HOME.root.properties)
 
-// console.log(Snap.HOME)
-// console.log("\n\n\n")
-// setPath(this.HOME, 'root', 'hetero')
+// Snap.setActiveFile("test/data0.json")
+// let c = Snap.Query("required")
+
+// console.log(a)
+// console.log(b)
+// console.log(c)
+
+
+
+Snap.loadFile("test/data1.json")
+Snap.setActiveFile("test/data1.json")
+
+
+
+
+
+// TESTS: Keep for Readme.md
+
+
+// Querying to deep levels does indeed slow things down
+// Snap.Time("Snap.Query() shallow", 1000000, () => {
+// 	let b = Snap.Query("quiz")
+// })
+// Snap.Time("Snap.Query() deep", 1000000, () => {
+// 	let b = Snap.Query("quiz.maths.q1.maths.q2.maths.q1.options")
+// })
+
+
+// Editing with a substatially larger replacement object
+// does not drastically increase the execution time
+
+// files reset before each measurement
+let large = {"quiz":{"sport":{"q1":{"question":"Which one is correct team name in NBA?","options":["New York Bulls","Los Angeles Kings","Golden State Warriros","Huston Rocket"],"answer":"Huston Rocket"}},"maths":{"q1":{"question":"5 + 7 = ?","options":["10","11","12","13"],"answer":"12","maths":{"q1":{"question":"5 + 7 = ?","options":["10","11","12","13"],"answer":"12"},"q2":{"question":"12 - 8 = ?","options":["1","2","3","4"],"answer":"4","maths":{"q1":{"question":"5 + 7 = ?","options":["10","11","12","13"],"answer":"12"},"q2":{"question":"12 - 8 = ?","options":["1","2","3","4"],"answer":"4"}}}}},"q2":{"question":"12 - 8 = ?","options":["1","2","3","4"],"answer":"4"}}}}
+let small = {"foo":"bar"}
+
+Snap.loadFile("test/data1.json")
+Snap.setActiveFile("test/data1.json")
+Snap.Time("edit", 1000000, () => {
+	let b = Snap.Edit("quiz.sport.q1", large)
+})
+
+Snap.loadFile("test/data1.json")
+Snap.setActiveFile("test/data1.json")
+Snap.Time("delete", 1000000, () => {
+	let b = Snap.Edit("quiz.sport.q1", small)
+})
+
+
+// Snap.Time("insert", 1000000, () => {
+// 	let b = Snap.Edit("quiz.sport.q2", {"foo":"bar"})
+// })
+
+
+
+
+
+
+
 
 
 
