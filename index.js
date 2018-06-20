@@ -90,6 +90,8 @@ Snap.prototype.Insert = operations.Insert
 Snap.prototype.Time = benchmarking.Time
 Snap.prototype.Log = benchmarking.Log
 
+// Snap.prototype.Sort = require('./code/sort').fieldSorter
+
 
 module.exports = Snap
 

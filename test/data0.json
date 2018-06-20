@@ -14,5 +14,19 @@
             "minimum": 0
         }
     },
-    "required": ["firstName", "lastName"]
+    "required": ["firstName", "lastName"],
+    "sort": [
+        {
+            "price": 1000
+        },
+        {
+            "price": 800
+        },
+        {
+            "price": 666
+        },
+        {
+            "price": 999
+        }
+    ]
 }
