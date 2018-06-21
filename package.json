@@ -1,28 +1,25 @@
 {
-  "name": "snap",
-  "version": "1.0.0",
+  "name": "unsure",
+  "version": "0.1.0",
   "description": "JSON toolkit that's pretty good",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MH15/snap.git"
+    "url": "git+https://github.com/MH15/unsure.git"
   },
   "author": "Matt Hall",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MH15/snap/issues"
+    "url": "https://github.com/MH15/unsure/issues"
   },
-  "homepage": "https://github.com/MH15/snap#readme",
+  "homepage": "https://github.com/MH15/unsure/blob/master/README.md",
   "devDependencies": {
     "express": "^4.16.3"
   },
   "dependencies": {
-    "benchmark": "^2.1.4",
-    "jsome": "^2.5.0",
-    "json-colorz": "^0.2.7",
     "microtime": "^2.1.8",
     "prettyjson": "^1.2.1"
   }
