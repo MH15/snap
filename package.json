@@ -2,7 +2,7 @@
   "name": "unsure",
   "version": "0.1.0",
   "description": "JSON toolkit that's pretty good",
-  "main": "index.js",
+  "main": "lib/unsure.js",
   "scripts": {
     "test": "node test.js"
   },
