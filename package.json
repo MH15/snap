@@ -1,6 +1,6 @@
 {
   "name": "unsure",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "JSON toolkit that's pretty good",
   "main": "lib/unsure.js",
   "scripts": {
